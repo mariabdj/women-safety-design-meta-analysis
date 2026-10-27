@@ -43,4 +43,5 @@ Each step of the review has a gate: a set of checks that must pass before the ne
 Code: MIT (see `LICENSE`). Data tables, logs and text: CC BY 4.0.
 
 ## Author
-Maria Boudjelal (GitHub: [mariabdj](https://github.com/mariabdj))
+Maria Boudjelal, independent researcher, Algiers, Algeria
+ORCID: [0009-0002-6434-784X](https://orcid.org/0009-0002-6434-784X) · GitHub: [mariabdj](https://github.com/mariabdj)
