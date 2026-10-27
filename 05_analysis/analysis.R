@@ -74,6 +74,8 @@ summarise_coef <- function(m, s, name, coef = 1, with_pi = TRUE) {
     out$cr2_se <- rob$SE[coef]; out$cr2_df <- rob$df_Satt[coef]; out$cr2_pval <- rob$p_Satt[coef]
   }
   out$mde80 <- mde80(out$k, median(s$vi), out$tau2)
+  # equivalence test (TOST) against +/- SESOI: p is the larger of the two one-sided p-values
+  out$p_tost <- max(pt((b + SESOI) / se, df, lower.tail = FALSE), pt((b - SESOI) / se, df))
   out
 }
 
@@ -81,14 +83,17 @@ summarise_coef <- function(m, s, name, coef = 1, with_pi = TRUE) {
 decide <- function(x) {
   if (x$p_holm < ALPHA && x$estimate > 0) return("supported")
   if (x$p_holm < ALPHA && x$estimate < 0) return("opposite direction")
-  if (x$ci90_lb > -SESOI && x$ci90_ub < SESOI) return("equivalent (no meaningful effect)")
+  if (x$p_tost_holm < ALPHA) return("equivalent (no meaningful effect)")
   "inconclusive"
 }
 
 holm <- function(models) {
   if (!length(models)) return(models)
   p <- p.adjust(sapply(models, `[[`, "pval"), method = "holm")
-  for (i in seq_along(models)) { models[[i]]$p_holm <- p[i]; models[[i]]$decision <- decide(models[[i]]) }
+  pe <- p.adjust(sapply(models, `[[`, "p_tost"), method = "holm")
+  for (i in seq_along(models)) {
+    models[[i]]$p_holm <- p[i]; models[[i]]$p_tost_holm <- pe[i]; models[[i]]$decision <- decide(models[[i]])
+  }
   models
 }
 
@@ -167,6 +172,12 @@ if (file.exists(file.path(data_dir, "extraction_actual.csv"))) {
                      se = m$se, ci_lb = m$ci.lb, ci_ub = m$ci.ub, pi_lb = p$pi.lb, pi_ub = p$pi.ub,
                      pval = m$pval, tau2 = m$tau2, i2 = m$I2, ratio = exp(as.numeric(m$beta)))
   }
+  # sensitivity: crime counts are often overdispersed, so every variance is doubled (protocol 2.7)
+  rq4_overdispersion <- lapply(names(rq4), function(f) {
+    s <- ac[ac$feature == f, ]
+    m <- rma(yi, 2 * vi, data = s, method = "REML", test = "knha")
+    list(feature = f, estimate = as.numeric(m$beta), ci_lb = m$ci.lb, ci_ub = m$ci.ub, pval = m$pval)
+  })
   # agreement with perceived safety, feature by feature (direction only)
   agree <- lapply(names(rq4), function(f) list(feature = f,
     perceived = if (!is.null(rq1[[f]])) sign(rq1[[f]]$estimate) else NA, actual = sign(rq4[[f]]$estimate)))
@@ -201,8 +212,19 @@ sens$without_author_data <- refit_rq1(d[is.na(d$data_from_author) | d$data_from_
 sens$with_adolescents <- refit_rq1(d_all, "with adolescents")
 sens$two_level <- lapply(names(rq1), function(f) {
   s <- d[d$feature == f & d$gender == "women", ]
-  m <- rma(yi, vi, data = s, method = "REML", test = "knha")
+  m <- tryCatch(rma(yi, vi, data = s, method = "REML", test = "knha"), error = function(e) NULL)
+  if (is.null(m)) return(list(feature = f, note = "two-level model did not converge"))
   list(feature = f, estimate = as.numeric(m$beta), ci_lb = m$ci.lb, ci_ub = m$ci.ub)
+})
+# correlated-and-hierarchical-effects working model with CR2 (Pustejovsky & Tipton 2021), rho 0.6 (0.3, 0.8)
+for (rho in c(0.3, 0.6, 0.8)) sens[[paste0("che_rho_", rho)]] <- lapply(names(rq1), function(f) {
+  s <- d[d$feature == f & d$gender == "women", ]
+  V <- vcalc(vi, cluster = study_id, obs = es_id, rho = rho, data = s)
+  fit <- function(ctrl) rma.mv(yi, V, random = ~ 1 | study_id / es_id, data = s, test = "t", control = ctrl)
+  m <- tryCatch(fit(list()), error = function(e) tryCatch(fit(list(optimizer = "optim", optmethod = "BFGS")), error = function(e) NULL))
+  if (is.null(m)) return(list(feature = f, note = "CHE model did not converge"))
+  r <- coef_test(m, vcov = "CR2", cluster = s$study_id)
+  list(feature = f, estimate = as.numeric(m$beta), se_cr2 = r$SE[1], df = r$df_Satt[1], p_cr2 = r$p_Satt[1])
 })
 sens$leave_one_study_out <- lapply(names(rq1), function(f) {
   s <- d[d$feature == f & d$gender == "women", ]
@@ -226,7 +248,8 @@ res <- list(created_by = "05_analysis/analysis.R", data_dir = data_dir,
             settings = list(alpha = ALPHA, sesoi = SESOI, min_k = MIN_K, min_k_moderators = MIN_K_MOD,
                             r_impute = 0.5, metafor = as.character(packageVersion("metafor"))),
             models = models, swim = swims, small_study_effects = egger,
-            rq4_direction_agreement = if (exists("agree")) agree else list(), sensitivity = sens)
+            rq4_direction_agreement = if (exists("agree")) agree else list(),
+            rq4_overdispersion = if (exists("rq4_overdispersion")) rq4_overdispersion else list(), sensitivity = sens)
 dir.create(dirname(out_path), showWarnings = FALSE, recursive = TRUE)
 write_json(res, out_path, auto_unbox = TRUE, pretty = TRUE, digits = NA, na = "null")
 cat(sprintf("Wrote %s: %d pooled models, %d SWiM summaries\n", out_path, length(models), length(swims)))

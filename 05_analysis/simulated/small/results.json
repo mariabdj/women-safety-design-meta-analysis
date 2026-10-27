@@ -1,6 +1,6 @@
 {
   "created_by": "05_analysis/analysis.R",
-  "data_dir": "05_analysis/simulated/small",
+  "data_dir": "simulated/small",
   "settings": {
     "alpha": 0.05,
     "sesoi": 0.2,
@@ -402,6 +402,15 @@
       "feature": "lighting",
       "perceived": 1,
       "actual": 1
+    }
+  ],
+  "rq4_overdispersion": [
+    {
+      "feature": "lighting",
+      "estimate": 0.115645370830783,
+      "ci_lb": -0.0887199799285658,
+      "ci_ub": 0.320010721590131,
+      "pval": 0.169532384454284
     }
   ],
   "sensitivity": {
