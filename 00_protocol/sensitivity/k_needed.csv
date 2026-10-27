@@ -1,0 +1,17 @@
+"i2","design","question","v","k_for_80","k_for_90"
+0,"within-subject, n = 60 women, r = .5","RQ1",0.0166666666666667,6,7
+0.25,"within-subject, n = 60 women, r = .5","RQ1",0.0166666666666667,7,9
+0.5,"within-subject, n = 60 women, r = .5","RQ1",0.0166666666666667,9,11
+0.75,"within-subject, n = 60 women, r = .5","RQ1",0.0166666666666667,16,20
+0,"between-subject, 40 women per condition","RQ1",0.05,12,16
+0.25,"between-subject, 40 women per condition","RQ1",0.05,16,20
+0.5,"between-subject, 40 women per condition","RQ1",0.05,22,29
+0.75,"between-subject, 40 women per condition","RQ1",0.05,42,55
+0,"within-subject, n = 60 women, r = .5","RQ2",0.0333333333333333,9,11
+0.25,"within-subject, n = 60 women, r = .5","RQ2",0.0333333333333333,11,14
+0.5,"within-subject, n = 60 women, r = .5","RQ2",0.0333333333333333,16,20
+0.75,"within-subject, n = 60 women, r = .5","RQ2",0.0333333333333333,29,37
+0,"between-subject, 40 women per condition","RQ2",0.1,22,29
+0.25,"between-subject, 40 women per condition","RQ2",0.1,29,37
+0.5,"between-subject, 40 women per condition","RQ2",0.1,42,55
+0.75,"between-subject, 40 women per condition","RQ2",0.1,81,108

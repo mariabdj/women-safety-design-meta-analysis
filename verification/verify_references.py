@@ -73,7 +73,9 @@ for e in entries:
         errors.append(f"{key}: DOI {doi} does not exist on Crossref")
         continue
     cr_title = (msg.get("title") or [""])[0]
-    sim = difflib.SequenceMatcher(None, " ".join(norm(title)), " ".join(norm(cr_title))).ratio()
+    # Crossref keeps the subtitle in a separate field; a bib title may include it or not, so take the better match
+    cr_full = cr_title + ": " + (msg.get("subtitle") or [""])[0] if msg.get("subtitle") else cr_title
+    sim = max(difflib.SequenceMatcher(None, " ".join(norm(title)), " ".join(norm(c))).ratio() for c in (cr_title, cr_full))
     if sim < 0.90:
         errors.append(f"{key}: title mismatch ({sim:.2f}) bib='{title[:60]}' vs Crossref='{cr_title[:60]}'")
     parts = (msg.get("issued") or {}).get("date-parts") or [[None]]
@@ -84,7 +86,8 @@ for e in entries:
             cr_years.add(str(dp[0][0]))
     if year and year not in cr_years:
         errors.append(f"{key}: year {year} vs Crossref {sorted(cr_years)}")
-    cr_auth = msg.get("author") or []
+    # group authors (e.g. "PRISMA-P Group") have no family name: compare with the first named person
+    cr_auth = [a for a in (msg.get("author") or []) if a.get("family")]
     if first and cr_auth and norm(cr_auth[0].get("family", "")) != first:
         errors.append(f"{key}: first author '{' '.join(first)}' vs Crossref '{cr_auth[0].get('family')}'")
     ok += 1

@@ -77,3 +77,27 @@ RESULT: PASSED
 - Data access so far (for the bias-control statement): abstracts and titles only, plus Knabe et al. (2026) posted materials; no effect size extracted or computed.
 - 2026-10-27: D1–D10 accepted by the author. D11 added at the author's request (actual safety): feasibility search logged in `00_protocol/feasibility/` (OpenAlex: 1,062 records design × crime against women; 277 with an evaluation term; titles only). Cleland et al. (2025) scoping review found no intervention specifically preventing violence against women in green/blue spaces → RQ4 added as a secondary, descriptive question (SWiM; pooling only if ≥ 3 comparable studies). Extraction template: 3 columns added (outcome_type, outcome_source, unit_of_analysis).
 - 2026-10-27: D11 clarified by the author: actual safety is part of this meta-analysis. Eligibility now = perceived safety and/or actual safety for women; RQ4 pooled (log rate ratios) per feature when ≥ 3 comparable studies, otherwise SWiM. Protocol, decisions file and design table (RQ4 row) updated.
+- 2026-10-27: Protocol draft 1 written (`00_protocol/protocol.md`, appendices A and C). Inputs read: PCI RR Guide for Authors (sections 2.1, 2.6, 2.16, 2.17, 2.22, 2.28), one accepted Stage 1 meta-analysis with its reviews (rr.peercommunityin.org/articles/rec?id=51), "Ten simple rules for writing a Registered Report" (PMC9612468), NIRO-SR v1.1 tool (osf.io/c9wer, saved in Documentation/), PRISMA-P.
+- 2026-10-27: Search development (`00_protocol/search_development/`). v1: S1 23,950 / S2 31,724 hits, too noisy. v2: S1 5,340; S2 3,080; S3 (French) 1,253; S4 5,481; union S1+S2+S4 = 12,577 (1990-2026). Benchmark recall (7 studies fixed before the test, titles only): 7/7 found by the union. S2 retrieves Cleland 2025 and doi:10.1080/17450101.2025.2598271 (no eligible actual-safety benchmark exists).
+- 2026-10-27: Sensitivity analysis (`00_protocol/sensitivity/`): 112 scenarios computed in R; new script `verification/verify_sensitivity.py` recomputes them with scipy: 0 mismatches > 1e-6. Planted error (+0.001 on one MDE) caught: FAILED as expected.
+- 2026-10-27: `verify_references.py` changed: (1) title compared with Crossref title with and without its subtitle (Crossref stores subtitles separately: 3 false failures); (2) first author compared with the first named person (group authors have no family name: 1 false failure). Re-tested with 5 planted errors (wrong title, wrong year, fake DOI, 2 wrong first authors): 5/5 caught. Protocol bibliography `00_protocol/references.bib`: 46 DOIs PASSED; 4 entries without DOI marked verified-manually. Collins 2016 removed (listed but not cited). `run_gate.py`: Gate 1 now runs verify_sensitivity.py and verify_references.py on the protocol bibliography.
+
+## GATE 1: Protocol | run 1 | 2026-10-27 21:32
+### verify_sensitivity.py: PASS
+```
+112 rows x 4 values checked, 0 mismatches
+RESULT: PASSED
+```
+### verify_references.py: PASS
+```
+RESULT: PASSED (46 DOIs verified on Crossref, citations and bibliography match)
+```
+Manual checks: (fill in: each manual item of the gate, with evidence)
+AUTOMATIC CHECKS: ALL PASSED
+RESULT: (write PASSED only when automatic AND manual checks all pass)
+Manual checks (Gate 1, run 1):
+- [x] Every NIRO-SR Part A item (A1-A30) and PRISMA-P item mapped to a protocol section: `00_protocol/appendix_A_checklists.md`.
+- [x] Search string runs without syntax error in OpenAlex, hit counts logged: `search_development/search_dev_log.csv` (v2, 2026-10-27).
+- [x] Each sub-question maps to one pre-specified analysis and vice versa: protocol section 3 (design table rows H0, RQ1-RQ4) and 2.8.
+- [ ] [MARIA] reads and approves the protocol, then deposits it on OSF (link and date to be logged). Open: the search strings for Semantic Scholar, PubMed and CORE are still to be adapted and tested (timeline 11-16 Nov); Appendix F (analysis code on simulated data) is still to be written.
+RESULT: NOT YET PASSED (Maria's approval and OSF deposit pending; Appendix F and other-database strings pending)

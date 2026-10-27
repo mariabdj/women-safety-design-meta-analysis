@@ -12,7 +12,8 @@ NAMES = {0: "Set-up", 1: "Protocol", 2: "Search", 3: "Screening", 4: "Extraction
          6: "Effect sizes", 7: "Analysis", 8: "Figures", 9: "Manuscript"}
 GATES = {
     0: [[PY, V / "verify_structure.py"]],
-    1: [],
+    1: [[PY, V / "verify_sensitivity.py"],
+        [PY, V / "verify_references.py", ROOT / "00_protocol" / "references.bib", ROOT / "none.qmd"]],
     2: [[PY, V / "verify_search_log.py"], [PY, V / "verify_source_registry.py"]],
     3: [[PY, V / "verify_prisma_counts.py"]],
     4: [[RS, V / "verify_extraction.R"], [PY, V / "verify_double_extraction.py"]],

@@ -1,0 +1,8 @@
+date,benchmark,doi,in_openalex,has_abstract,S1_feature_x_perceived,S2_feature_x_actual_x_women,S3_french_outcomes
+2026-10-27,Boomsma & Steg 2014,10.1177/0013916512453838,yes,yes,found,missed,missed
+2026-10-27,Baran et al. 2018,10.1016/j.ufug.2018.08.009,yes,no,found,missed,missed
+2026-10-27,Basu et al. 2021,10.1016/j.jth.2021.101243,yes,no,found,missed,missed
+2026-10-27,Navarrete-Hernandez et al. 2025,10.1016/j.landurbplan.2025.105460,yes,no,found,found,missed
+2026-10-27,Adamczak et al. 2025,10.1016/j.jenvp.2025.102752,yes,yes,missed,missed,missed
+2026-10-27,Brands et al. 2025,10.1093/bjc/azae072,yes,yes,found,missed,missed
+2026-10-27,Basaran et al. 2026,10.1016/j.cities.2026.106873,yes,yes,found,missed,missed
