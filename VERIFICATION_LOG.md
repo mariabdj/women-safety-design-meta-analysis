@@ -46,3 +46,10 @@ Manual checks:
 - [x] LEARNING_NOTEBOOK.md Step 0 chapter updated with the v3 revision and the manual checks.
 AUTOMATIC CHECKS: ALL PASSED
 RESULT: NOT YET PASSED (1 item pending for Maria + 1 known limitation to clear in Step 1)
+
+### GATE 0 addendum | 2026-10-27
+- [x] Known limitation resolved: Niazi et al. 2018 abstract obtained by Maria from sid.ir (saved: `00_protocol/overlap_search/raw/close_matches/Niazi2018_abstract_from_sid.txt`, kept private). 16 Iranian correlational surveys, women only, individual/social factors, no design features, no women vs men comparison → not an overlap. Full text not downloadable (server not responding).
+- [x] Public repository created and pushed: https://github.com/mariabdj/women-safety-design-meta-analysis (39 files; `verify_public_release.py` PASSED before and after push; GitHub contributors: mariabdj only).
+- [x] Pre-release check script fixed: it now checks only the files git will publish (it was reading ignored raw data) and every line in the git history; Windows encoding crash fixed. Re-tested with planted cases: problem in a tracked file → FAIL; problem only in history → FAIL; clean repo → PASS.
+- [ ] PENDING [MARIA]: go / no-go on the gender-disaggregated angle and the PCI RR route.
+RESULT: NOT YET PASSED (1 item pending for Maria)
