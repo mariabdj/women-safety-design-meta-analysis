@@ -1,0 +1,7 @@
+"act_id","study_id","feature","metric","ctrl_before","ctrl_after","trt_before","trt_after","source_location"
+"A001","C001","lighting","counts",80,81,80,72,"simulated"
+"A002","C002","lighting","counts",71,65,76,50,"simulated"
+"A003","C003","lighting","counts",100,109,86,92,"simulated"
+"A004","C004","lighting","counts",101,96,91,81,"simulated"
+"A005","C005","vegetation","counts",41,54,31,27,"simulated"
+"A006","C006","vegetation","counts",91,80,90,78,"simulated"

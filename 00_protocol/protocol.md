@@ -95,7 +95,7 @@ A study needs at least one eligible outcome: perceived safety, actual safety, or
 - **S4** = perceived safety terms AND women/gender terms AND place terms (catches gender-focused studies whose abstract names no specific feature)
 - plus French outcome terms (S3) run in the same sources.
 
-**Development and test.** Version 1 of the strings (27 October 2026) used single generic words (street, park, trees, disorder, refuge, crime) and returned about 24,000 and 32,000 records for S1 and S2, mostly irrelevant ("disorder" retrieved mental disorders and "refuge" retrieved shelters). Version 2 uses precise phrases. In OpenAlex on 27 October 2026, version 2 returned 5,340 (S1), 3,080 (S2) and 5,481 (S4) records; the union returned 12,577 records for 1990 to 2026, and S3 returned 1,253 records. Before running the test I fixed a set of seven benchmark primary studies likely to be eligible, chosen from titles only (Adamczak et al., 2025; Baran et al., 2018; Başaran et al., 2026; Basu et al., 2021; Boomsma & Steg, 2012; Brands et al., 2024; Navarrete-Hernández et al., 2025). The union retrieved 7 of 7. No known primary study of actual safety for women was available as a benchmark, which is itself consistent with Cleland et al. (2025); S2 did retrieve that review and a 2025 study on sexual violence and the built environment. Logs: `search_development/`.
+**Development and test.** Version 1 of the strings (27 October 2026) used single generic words (street, park, trees, disorder, refuge, crime) and returned about 24,000 and 32,000 records for S1 and S2, mostly irrelevant ("disorder" retrieved mental disorders and "refuge" retrieved shelters). Version 2 uses precise phrases. In OpenAlex on 27 October 2026, version 2 returned 5,340 (S1), 3,080 (S2) and 5,481 (S4) records; the union returned 12,577 records for 1990 to 2026, and S3 returned 1,253 records. Before running the test I fixed a set of seven benchmark primary studies likely to be eligible, chosen from titles only (Adamczak et al., 2025; Baran et al., 2018; Başaran et al., 2026; Basu et al., 2021; Boomsma & Steg, 2012; Brands et al., 2024; Navarrete-Hernández et al., 2025). The union retrieved 7 of 7. The same blocks, translated to each database's syntax (Appendix B), returned 7,817 records in Semantic Scholar (1990 to 2026), whose union retrieved all 6 benchmarks indexed there (Navarrete-Hernández et al., 2025, is not indexed in Semantic Scholar), and 1,005 records in PubMed. None of the benchmarks is indexed in PubMed, so recall there was checked with a positive control instead: Lorenc et al. (2013), which is indexed, is retrieved. The CORE string uses field searches on titles and abstracts only, because a plain CORE query also searches full texts; it will be tested and its count logged before submission. No known primary study of actual safety for women was available as a benchmark, which is itself consistent with Cleland et al. (2025); S2 did retrieve that review and a 2025 study on sexual violence and the built environment. Logs: `search_development/`.
 
 **Other sources:**
 - **Google Scholar:** the first 200 results of one simplified query, screened by hand.
@@ -197,6 +197,8 @@ All effect sizes are computed by script, never by hand. They are checked by an i
 `rma.mv(yi, vi, random = ~ 1 | study_id / es_id, test = "t")` in metafor (Viechtbauer, 2010).
 
 When at least 10 studies contribute, inference is repeated with cluster-robust (CR2) standard errors (Pustejovsky & Tipton, 2017).
+
+**Convergence fallback.** If a three-level model does not converge with the default optimiser, it is refitted with a second optimiser (BFGS). If it still fails, a two-level model with study-level random effects is used. The model actually used is reported for every estimate. This rule was written after the pipeline test on simulated data (Appendix F) showed that, with only 3 studies, the default optimiser can fail.
 
 **Analyses for each question:**
 - **RQ1 (H1a to H1f):** one model per feature, women's effects only.
@@ -392,5 +394,10 @@ Wilson, J. Q., & Kelling, G. L. (1982). Broken windows. *The Atlantic Monthly, 2
 **C. Screening manual and extraction variables:** `appendix_C_screening_extraction.md` and `verification/templates/extraction_template.csv`
 **D. Risk-of-bias items and rule:** section 2.6; template `verification/templates/rob_template.csv`
 **E. Source register for evidence beyond articles:** `verification/templates/source_registry_template.csv`
-**F. Analysis code tested on simulated data:** `05_analysis/` (to be added before submission)
+**F. Analysis code tested on simulated data:** `05_analysis/analysis.R` is the complete analysis of this protocol (RQ1 to RQ4, baseline check, decision rules, sensitivity analyses). `05_analysis/simulate_data.R` creates fake datasets with known true effects. `05_analysis/test_pipeline.R` checks three things:
+1. With 60 simulated studies per feature, every estimate is within 3 standard errors of its true value, and the decisions are the expected ones.
+2. Over 60 repeated small datasets (8 studies per feature), the 95% CIs contain the true value about 95% of the time, without bias.
+3. The SWiM branch and RQ4 work with very few studies.
+
+The pooled results are also checked by `verification/verify_model.R` against two independent implementations. No real data were used.
 **G. Sensitivity analysis:** `sensitivity/sensitivity_analysis.R`, results and power curves

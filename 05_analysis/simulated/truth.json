@@ -1,0 +1,34 @@
+{
+  "seed": 2026,
+  "n_per_feature": 8,
+  "true_women": {
+    "lighting": 0.45,
+    "vegetation": 0.1,
+    "sightlines": 0.35,
+    "active_frontages": 0.2,
+    "maintenance": 0.25,
+    "presence_of_others": 0
+  },
+  "true_men": {
+    "lighting": 0.2,
+    "vegetation": 0.1,
+    "sightlines": 0.15,
+    "active_frontages": 0.2,
+    "maintenance": 0.25,
+    "presence_of_others": 0
+  },
+  "true_diff": {
+    "lighting": 0.25,
+    "vegetation": 0,
+    "sightlines": 0.2,
+    "active_frontages": 0,
+    "maintenance": 0,
+    "presence_of_others": 0
+  },
+  "gap_intercept": 0.45,
+  "gap_slope": -0.05,
+  "true_log_relative_effect": {
+    "lighting": 0.2,
+    "vegetation": 0.1
+  }
+}
