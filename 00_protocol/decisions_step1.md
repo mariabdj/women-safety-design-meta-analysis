@@ -45,3 +45,7 @@ Each decision is fixed **before** any data are analysed. Once the protocol is re
 - No hypothesis, no SESOI (estimation only).
 
 **Status:** accepted in principle by Maria on 2026-10-27, with the clarification that actual safety is included in this meta-analysis (studies with actual-safety outcomes only are eligible). Final wording to be confirmed when she reads the protocol.
+
+
+## Update to D7, 2026-10-27
+Maria's decision: **no date limit** (all years; still English and French). Reason: in OpenAlex the 1990 limit removed only 233 of 12,810 records (1.8%), so it saved almost no work while needing a justification reviewers often question.

@@ -3,7 +3,7 @@ Usage: python verification/verify_manuscript_numbers.py [manuscript.md|.qmd|.txt
 
 A number in the text is accepted if it equals a value from results.json, extraction.csv or prisma_counts.json
 rounded to 0, 1, 2 or 3 decimals (also as a percentage), or is whitelisted in verification/number_whitelist.txt
-(one number per line), or is a year 1990-2030. The References section is skipped.
+(one number per line), or is a year 1900-2030. The References section is skipped.
 --style also fails on em dashes.
 """
 import csv, json, pathlib, re, sys
@@ -82,7 +82,7 @@ for ln, line in enumerate(body.splitlines(), 1):
             x = float(raw)
         except ValueError:
             continue
-        if 1990 <= x <= 2030 and float(x).is_integer():
+        if 1900 <= x <= 2030 and float(x).is_integer():
             continue
         if x in allowed or abs(x) in allowed:
             continue

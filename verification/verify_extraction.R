@@ -29,7 +29,7 @@ for (i in seq_len(nrow(d))) {
   if (!is.na(r$design) && !r$design %in% c("between", "within")) fail(id, "design", paste0("'", r$design, "' not in between/within"))
   if (!is.na(r$higher_is_safer) && !r$higher_is_safer %in% c("yes", "no")) fail(id, "higher_is_safer", "must be yes/no")
   if (!is.na(r$data_from_author) && !r$data_from_author %in% c("yes", "no")) fail(id, "data_from_author", "must be yes/no")
-  if (!is.na(r$year) && (r$year < 1990 || r$year > 2026)) fail(id, "year", paste(r$year, "outside protocol window 1990-2026"))
+  if (!is.na(r$year) && (r$year < 1900 || r$year > as.integer(format(Sys.Date(), "%Y")))) fail(id, "year", paste(r$year, "not a plausible publication year (no date limit in the protocol)"))
   if (!is_count(r$n_t)) fail(id, "n_t", paste(r$n_t, "is not a positive integer"))
   if (!is_count(r$n_c)) fail(id, "n_c", paste(r$n_c, "is not a positive integer"))
   if (!is.na(r$design) && r$design == "within" && !is.na(r$n_t) && !is.na(r$n_c) && r$n_t != r$n_c)
