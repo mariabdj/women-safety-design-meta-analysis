@@ -68,3 +68,10 @@ Manual checks (run 4):
 - [x] Decisions recorded for Step 1: gender-disaggregated meta-analysis; Registered Report at PCI RR (Stage 1 before 2026-12-01); Plan C sources (guide Step 2b); solo author with documented safeguards.
 - [x] LEARNING_NOTEBOOK chapter for Step 0 complete.
 RESULT: PASSED
+
+## STEP 1 started | 2026-10-27
+- Entry gate: GATE 0 PASSED (run 4, 2026-10-27).
+- PCI RR Stage 1 requirements read from the official guide and summarised: `00_protocol/PCI_RR_stage1_requirements.md`.
+- Protocol skeleton created: `00_protocol/protocol.md` (all PRISMA-P / NIRO-SR areas present as sections).
+- Ten protocol decisions prepared for the author: `00_protocol/decisions_step1.md` (pending).
+- Data access so far (for the bias-control statement): abstracts and titles only, plus Knabe et al. (2026) posted materials; no effect size extracted or computed.
