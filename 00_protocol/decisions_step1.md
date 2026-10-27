@@ -36,11 +36,12 @@ Each decision is fixed **before** any data are analysed. Once the protocol is re
 | Separate meta-analysis of crime against women | **Not feasible**: almost no poolable studies; large extra work for an empty result |
 | **Secondary question RQ4, inside the same review** | **Adopted** |
 
-**RQ4 (secondary, descriptive):** Among studies of the six design features, which also report *actual* safety outcomes for women (victimisation, sexual harassment, assaults, police-recorded or self-reported crime against women), and do these agree with women's perceived safety?
+**RQ4 (secondary, inside this meta-analysis):** What is the effect of the six design features on women's *actual* safety (victimisation, sexual harassment, assaults, police-recorded or self-reported crime against women), and does it agree with their effect on women's perceived safety?
+- Clarified with Maria on 2026-10-27: actual safety is part of **this** review, not a separate one. A study is eligible if it reports perceived safety **or** actual safety (or both) for women, for at least one of the six features.
 - Same search and screening; outcome block widened with crime and harassment terms.
 - Extraction adds: outcome type (perceived / actual), data source (survey, police records, observation), unit (person / place), measure and effect (rate ratio, counts before/after).
-- Synthesis: SWiM (structured narrative) by default; random-effects meta-analysis of log rate ratios only if ≥ 3 comparable studies.
+- Synthesis: SWiM (structured narrative) by default; random-effects meta-analysis of log rate ratios per feature when ≥ 3 comparable studies (same rule as RQ1). Actual-safety and perceived-safety effects are never pooled together (different units).
 - Discussion: the "feeling safe vs being safe" gap and the evidence gap (Cleland et al. 2025; Welsh, Farrington & Douglas 2022 on lighting and crime without gender breakdown) are reported as findings.
 - No hypothesis, no SESOI (estimation only).
 
-**Status:** recommendation following Maria's instruction ("if it would change too much… ignore it"); to be confirmed by Maria.
+**Status:** accepted in principle by Maria on 2026-10-27, with the clarification that actual safety is included in this meta-analysis (studies with actual-safety outcomes only are eligible). Final wording to be confirmed when she reads the protocol.
