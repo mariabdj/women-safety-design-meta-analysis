@@ -13,7 +13,7 @@ NAMES = {0: "Set-up", 1: "Protocol", 2: "Search", 3: "Screening", 4: "Extraction
 GATES = {
     0: [[PY, V / "verify_structure.py"]],
     1: [],
-    2: [[PY, V / "verify_search_log.py"]],
+    2: [[PY, V / "verify_search_log.py"], [PY, V / "verify_source_registry.py"]],
     3: [[PY, V / "verify_prisma_counts.py"]],
     4: [[RS, V / "verify_extraction.R"], [PY, V / "verify_double_extraction.py"]],
     5: [[PY, V / "verify_rob.py"]],
