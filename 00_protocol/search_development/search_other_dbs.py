@@ -4,7 +4,8 @@ Same word blocks as OpenAlex (search_blocks.py); only the syntax changes per dat
 Counts and benchmark recall only: no record is saved or screened (the real search runs after acceptance).
 Writes the exact strings to strings_<database>.txt and appends counts to search_dev_log.csv / benchmark_recall.csv.
 Usage (from Projet1_Meta-Analyse/): python 00_protocol/search_development/search_other_dbs.py
-Optional: SEMANTIC_SCHOLAR_API_KEY, CORE_API_KEY in the environment.
+Optional: SEMANTIC_SCHOLAR_API_KEY in the environment. CORE has no API access here: its strings are run by hand
+on core.ac.uk (title field only, one query per strategy; see search_dev_log.csv).
 """
 import csv, datetime, json, os, pathlib, re, time, urllib.error, urllib.parse, urllib.request
 
@@ -44,11 +45,9 @@ def s2(blocks):
 
 
 def core(blocks):
-    # CORE v3: field search on title and abstract only (a plain query would also search full texts)
-    def blk(b):
-        inner = " OR ".join(b)
-        return f"(title:({inner}) OR abstract:({inner}))"
-    return " AND ".join(blk(b) for b in blocks)
+    # CORE website: title field only. Tested 27 Oct 2026: queries mixing title: and abstract: fail or are
+    # mis-parsed, and an OR of whole strategies is mis-parsed too, so S1, S2, S4 are run separately and merged.
+    return "title:(" + " AND ".join("(" + " OR ".join(b) + ")" for b in blocks) + ")"
 
 
 def union(fn):
@@ -98,7 +97,6 @@ for name, blocks in STRATEGIES.items():
     strings["core"][name] = core(blocks)
 strings["pubmed"]["UNION_S1_S2_S4"] = union(pubmed)
 strings["semantic_scholar"]["UNION_S1_S2_S4"] = union(s2)
-strings["core"]["UNION_S1_S2_S4"] = union(core)
 for db, d in strings.items():
     (HERE / f"strings_{db}.txt").write_text(
         "\n\n".join(f"## {k}\n{v}" for k, v in d.items()) + "\n", encoding="utf-8")
