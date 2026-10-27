@@ -1,5 +1,7 @@
 # Step 1 decisions (protocol)
 
+**Status:** D1–D10 accepted by Maria on 2026-10-27 ("D1 D2 D3 D4 D5 D6 D7 D8 D9 D10 I agree with your recom").
+
 Each decision is fixed **before** any data are analysed. Once the protocol is registered, changing one becomes a reported deviation. Recommendations are justified by the documentation in `Documentation/` and the PCI RR guide. Maria decides.
 
 | # | Decision | Options | Recommendation | Why |
@@ -23,3 +25,22 @@ Each decision is fixed **before** any data are analysed. Once the protocol is re
 | 17 – 21 Nov | Maria's full read; revisions; references verified | Both |
 | 22 – 23 Nov | OSF project + deposit of the Stage 1 manuscript (P5) | Maria, guided |
 | 24 – 25 Nov | PCI RR submission (P6) | Maria, guided |
+
+## D11. Actual safety (crime against women), added 2026-10-27 at Maria's request
+**Question raised:** besides *feeling* safer, which park and street features make women *actually* safer from crime?
+
+**Feasibility check (logged in `feasibility/`):** OpenAlex, design × crime against women × evaluation = 277 records; titles read. Very few quantitative evaluations with women-specific crime outcomes, spread over very different settings (refugee camps, public transport, informal settlements). A 2025 systematic scoping review on exactly this question for green and blue spaces (Cleland, Coney, O'Kane & Hunter, *Cities & Health*, doi:10.1080/23748834.2025.2508053) screened 2,303 papers, found 8 interventions, and reports "the absence of urban green and blue space interventions to specifically prevent violence against women and girls".
+
+| Option | Verdict |
+|---|---|
+| Separate meta-analysis of crime against women | **Not feasible**: almost no poolable studies; large extra work for an empty result |
+| **Secondary question RQ4, inside the same review** | **Adopted** |
+
+**RQ4 (secondary, descriptive):** Among studies of the six design features, which also report *actual* safety outcomes for women (victimisation, sexual harassment, assaults, police-recorded or self-reported crime against women), and do these agree with women's perceived safety?
+- Same search and screening; outcome block widened with crime and harassment terms.
+- Extraction adds: outcome type (perceived / actual), data source (survey, police records, observation), unit (person / place), measure and effect (rate ratio, counts before/after).
+- Synthesis: SWiM (structured narrative) by default; random-effects meta-analysis of log rate ratios only if ≥ 3 comparable studies.
+- Discussion: the "feeling safe vs being safe" gap and the evidence gap (Cleland et al. 2025; Welsh, Farrington & Douglas 2022 on lighting and crime without gender breakdown) are reported as findings.
+- No hypothesis, no SESOI (estimation only).
+
+**Status:** recommendation following Maria's instruction ("if it would change too much… ignore it"); to be confirmed by Maria.

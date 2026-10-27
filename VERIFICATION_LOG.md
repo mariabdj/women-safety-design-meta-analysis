@@ -75,3 +75,4 @@ RESULT: PASSED
 - Protocol skeleton created: `00_protocol/protocol.md` (all PRISMA-P / NIRO-SR areas present as sections).
 - Ten protocol decisions prepared for the author: `00_protocol/decisions_step1.md` (pending).
 - Data access so far (for the bias-control statement): abstracts and titles only, plus Knabe et al. (2026) posted materials; no effect size extracted or computed.
+- 2026-10-27: D1–D10 accepted by the author. D11 added at the author's request (actual safety): feasibility search logged in `00_protocol/feasibility/` (OpenAlex: 1,062 records design × crime against women; 277 with an evaluation term; titles only). Cleland et al. (2025) scoping review found no intervention specifically preventing violence against women in green/blue spaces → RQ4 added as a secondary, descriptive question (SWiM; pooling only if ≥ 3 comparable studies). Extraction template: 3 columns added (outcome_type, outcome_source, unit_of_analysis).

@@ -21,6 +21,7 @@
 - RQ1: For each design feature, what is the average effect on women's perceived safety?
 - RQ2: Is the effect of each feature larger for women than for men in the same studies?
 - RQ3: Is the women–men gap in perceived safety smaller in better-designed scenes?
+- RQ4 (secondary, descriptive): Do the studies of these features also report *actual* safety outcomes for women (victimisation, harassment, crime against women), and do these agree with perceived safety? `[D11]`
 
 ## 2. Methods
 Reporting: PRISMA 2020 and PRISMA-S; protocol structure follows PRISMA-P and NIRO-SR (Topor et al., 2023). Checklist mapping in Appendix A.
@@ -31,7 +32,7 @@ Reporting: PRISMA 2020 and PRISMA-S; protocol structure follows PRISMA-P and NIR
 | Population | `[D3]` | |
 | Exposure (design features) | `[D4]` lighting; vegetation; sightlines/openness; active frontages; maintenance/incivilities; presence of others | |
 | Comparator | same scene/place without, or with less of, the feature | |
-| Outcome | `[D5]` perceived safety, fear of crime, reassurance (self-report) | |
+| Outcome | `[D5]` perceived safety, fear of crime, reassurance (self-report). `[D11]` Secondary: actual safety outcomes for women (victimisation, harassment, crime against women; survey or police records) | |
 | Study design | `[D6]` | qualitative-only studies |
 | Must report | results separately for women (ideally women and men), or data allowing it (Plan C) | |
 | Language / dates | `[D7]` | |
@@ -42,7 +43,7 @@ Reporting: PRISMA 2020 and PRISMA-S; protocol structure follows PRISMA-P and NIR
 2.5 Plan C: evidence beyond journal articles `[TO DRAFT]`: Tier 1 (open raw data, theses, proceedings, figures, author replies) and Tier 2 (official surveys, context only); five recognition rules including the sanity check.
 2.6 Risk of bias `[TO DRAFT]`: adapted JBI quasi-experimental checklist, six items, overall-rating rule, use in sensitivity analysis.
 2.7 Effect sizes `[TO DRAFT]`: Hedges' g with exact correction; SMD (between), SMCR (within, r imputed 0.5; sensitivity 0.3/0.7); OR→d; t→d; sign convention g > 0 = safer. Independent re-computation check.
-2.8 Synthesis `[TO DRAFT]`: per feature, k ≥ 3 studies; three-level random-effects model (REML, t-tests, CR2 robust SE); gender moderator (RQ2); design-quality × gender (RQ3, k ≥ 10); prediction intervals; SWiM for k < 3.
+2.8 Synthesis `[TO DRAFT]`: per feature, k ≥ 3 studies; three-level random-effects model (REML, t-tests, CR2 robust SE); gender moderator (RQ2); design-quality × gender (RQ3, k ≥ 10); prediction intervals; SWiM for k < 3. RQ4: SWiM; log rate ratios pooled only if ≥ 3 comparable studies `[D11]`.
 2.9 Sampling plan / sensitivity analysis `[D2]` `[TO DRAFT]`: smallest effect size of interest; expected k; minimal detectable effect.
 2.10 Heterogeneity, publication bias, sensitivity analyses `[TO DRAFT]`
 2.11 Outcome-neutral checks (criterion 1E) `[TO DRAFT]`: e.g. the women > men baseline fear difference must replicate in included studies; search benchmark recall; effect-size re-computation agreement.
