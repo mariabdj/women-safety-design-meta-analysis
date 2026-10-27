@@ -1,0 +1,16 @@
+# Papers and handbooks: cite them, do not redistribute
+Documentation/
+
+# Raw search exports and large derived tables: archived on OSF instead (too large for git)
+00_protocol/overlap_search/raw/
+00_protocol/overlap_search/overlap_records*.csv
+00_protocol/overlap_search/stage1_kept*.csv
+00_protocol/overlap_search/stage1_new_in_v3.csv
+01_search/raw/
+
+# R / Python clutter
+.Rhistory
+.RData
+.Rproj.user/
+__pycache__/
+*.pyc

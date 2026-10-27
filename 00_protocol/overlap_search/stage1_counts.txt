@@ -1,0 +1,1 @@
+stage 1: 6507 records in, 2584 kept (context words), 3923 removed
