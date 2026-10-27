@@ -53,3 +53,18 @@ RESULT: NOT YET PASSED (1 item pending for Maria + 1 known limitation to clear i
 - [x] Pre-release check script fixed: it now checks only the files git will publish (it was reading ignored raw data) and every line in the git history; Windows encoding crash fixed. Re-tested with planted cases: problem in a tracked file → FAIL; problem only in history → FAIL; clean repo → PASS.
 - [ ] PENDING [MARIA]: go / no-go on the gender-disaggregated angle and the PCI RR route.
 RESULT: NOT YET PASSED (1 item pending for Maria)
+
+## GATE 0: Set-up | run 4 | 2026-10-27 20:38
+### verify_structure.py: PASS
+```
+RESULT: PASSED (8 folders, 2 files present)
+```
+Manual checks: (fill in: each manual item of the gate, with evidence)
+AUTOMATIC CHECKS: ALL PASSED
+RESULT: (write PASSED only when automatic AND manual checks all pass)
+Manual checks (run 4):
+- [x] All manual items of runs 2 and 3 carried over and still valid (overlap search v1→v3 logged; 5/5 benchmarks; PROSPERO and Google Scholar checks; 17 close matches assessed in OVERLAP_REPORT.md; Niazi et al. 2018 abstract assessed; known limitations listed).
+- [x] [MARIA] Decision given in chat on 2026-10-27: "GO : je confirme l'angle désagrégé par genre, la voie PCI RR, le plan C et le travail en solo. On passe à l'étape 1."
+- [x] Decisions recorded for Step 1: gender-disaggregated meta-analysis; Registered Report at PCI RR (Stage 1 before 2026-12-01); Plan C sources (guide Step 2b); solo author with documented safeguards.
+- [x] LEARNING_NOTEBOOK chapter for Step 0 complete.
+RESULT: PASSED
