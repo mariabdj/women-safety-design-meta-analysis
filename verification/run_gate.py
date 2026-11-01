@@ -18,7 +18,7 @@ GATES = {
     3: [[PY, V / "verify_prisma_counts.py"]],
     4: [[RS, V / "verify_extraction.R"], [PY, V / "verify_double_extraction.py"]],
     5: [[PY, V / "verify_rob.py"]],
-    6: [[RS, V / "verify_extraction.R"], [RS, V / "verify_effect_sizes.R"]],
+    6: [[RS, V / "verify_extraction.R", "03_extraction/extraction.csv", "--complete"], [RS, V / "verify_effect_sizes.R"]],
     7: [[RS, V / "verify_effect_sizes.R"], [RS, V / "verify_model.R"]],
     8: [[PY, V / "verify_figures.py"]],
     9: [[PY, V / "verify_manuscript_numbers.py", "--style"], [PY, V / "verify_references.py"],
@@ -29,14 +29,29 @@ n = int(sys.argv[1])
 log = ROOT / "VERIFICATION_LOG.md"
 prev = log.read_text(encoding="utf-8") if log.is_file() else ""
 run_no = len(re.findall(rf"^## GATE {n}:", prev, flags=re.M)) + 1
-if n > 0 and not re.search(rf"^## GATE {n-1}:.*\n(?:(?!^## ).*\n)*?RESULT: PASSED", prev, flags=re.M):
-    print(f"WARNING: GATE {n-1} has no PASSED run in VERIFICATION_LOG.md. Per the protocol, step {n} must not start.")
+def last_run_passed(text, g):
+    # the manual verdict is the last non-empty line of the last "## GATE g:" section, outside code fences
+    text = re.sub(r"```.*?```", "", text, flags=re.S)   # script output first, so a heading inside it cannot fake a run
+    runs = re.split(r"^(?=## )", text, flags=re.M)
+    runs = [r for r in runs if r.startswith(f"## GATE {g}:")]
+    if not runs:
+        return False
+    body = runs[-1].split("```")[0]   # an unclosed fence: ignore everything after it
+    lines = [l.rstrip() for l in body.splitlines() if l.strip()]
+    return bool(lines) and lines[-1] == "RESULT: PASSED"
+
+
+if n > 0 and not last_run_passed(prev, n - 1):
+    print(f"STOP: GATE {n-1} has no PASSED run in VERIFICATION_LOG.md (last line of its last run). "
+          f"Per the protocol, step {n} must not start.")
+    sys.exit(1)
 
 out = [f"\n## GATE {n}: {NAMES[n]} | run {run_no} | {datetime.datetime.now():%Y-%m-%d %H:%M}\n"]
 all_ok = True
 for cmd in GATES[n]:
     if not pathlib.Path(cmd[1]).is_file():
-        out.append(f"### {pathlib.Path(cmd[1]).name}: SKIPPED (script not present in this copy)\n")
+        out.append(f"### {pathlib.Path(cmd[1]).name}: FAIL (script not found)\n")
+        all_ok = False
         continue
     p = subprocess.run([str(c) for c in cmd], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace")
     ok = p.returncode == 0

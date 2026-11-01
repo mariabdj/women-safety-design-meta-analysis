@@ -1,29 +1,72 @@
 == Test 1: large simulation, 60 studies per feature ==
-PASS RQ1 lighting: estimate 0.438 vs truth 0.45 (SE 0.023) 
-PASS RQ2 lighting: difference 0.234 vs truth 0.25 (SE 0.022) 
-PASS RQ1 vegetation: estimate 0.094 vs truth 0.10 (SE 0.023) 
-PASS RQ2 vegetation: difference 0.022 vs truth 0.00 (SE 0.019) 
-PASS RQ1 sightlines: estimate 0.364 vs truth 0.35 (SE 0.024) 
-PASS RQ2 sightlines: difference 0.210 vs truth 0.20 (SE 0.021) 
-PASS RQ1 active_frontages: estimate 0.203 vs truth 0.20 (SE 0.018) 
-PASS RQ2 active_frontages: difference 0.021 vs truth 0.00 (SE 0.020) 
-PASS RQ1 maintenance: estimate 0.252 vs truth 0.25 (SE 0.023) 
-PASS RQ2 maintenance: difference 0.000 vs truth 0.00 (SE 0.021) 
-PASS RQ1 presence_of_others: estimate 0.019 vs truth 0.00 (SE 0.023) 
-PASS RQ2 presence_of_others: difference 0.013 vs truth 0.00 (SE 0.020) 
+PASS RQ1 lighting: estimate 0.458 vs truth 0.45 (SE 0.028) 
+PASS RQ2 lighting: difference 0.230 vs truth 0.25 (SE 0.030) 
+PASS RQ1 vegetation: estimate 0.127 vs truth 0.10 (SE 0.032) 
+PASS RQ2 vegetation: difference 0.015 vs truth 0.00 (SE 0.030) 
+PASS RQ1 sightlines: estimate 0.335 vs truth 0.35 (SE 0.030) 
+PASS RQ2 sightlines: difference 0.193 vs truth 0.20 (SE 0.034) 
+PASS RQ1 active_frontages: estimate 0.179 vs truth 0.20 (SE 0.029) 
+PASS RQ2 active_frontages: difference -0.001 vs truth 0.00 (SE 0.033) 
+PASS RQ1 maintenance: estimate 0.276 vs truth 0.25 (SE 0.030) 
+PASS RQ2 maintenance: difference 0.023 vs truth 0.00 (SE 0.028) 
+PASS RQ1 presence_of_others: estimate -0.007 vs truth 0.00 (SE 0.030) 
+PASS RQ2 presence_of_others: difference -0.064 vs truth 0.00 (SE 0.036) 
 PASS decision: lighting (true g = 0.45) supported 
 PASS decision: presence of others (true g = 0) equivalent 
-PASS H0 baseline gap detected (estimate 0.414) 
-PASS RQ3 slope -0.062 vs truth -0.05 (SE 0.005) 
+PASS OC1 baseline gap detected (estimate 0.378) 
+PASS RQ3 slope -0.055 vs truth -0.05 (SE 0.006) 
 PASS verify_model.R on large simulation 
-== Test 2: 60 small simulations, 8 studies per feature ==
-PASS RQ1 lighting: CI coverage 0.90 (target about 0.95) 
-PASS RQ1 lighting: mean estimate 0.451 vs truth 0.45 
-PASS RQ2 lighting: CI coverage 0.95 (target about 0.95) 
-PASS RQ2 lighting: mean difference 0.245 vs truth 0.25 
+== Test 2: 40 small simulations, 8 studies per feature ==
+Warning message:
+Fisher scoring algorithm may have gotten stuck at a local maximum.
+Setting tau^2 = 0. Check the profile likelihood plot with profile(). 
+Warning message:
+Fisher scoring algorithm may have gotten stuck at a local maximum.
+Setting tau^2 = 0. Check the profile likelihood plot with profile(). 
+Warning message:
+Fisher scoring algorithm may have gotten stuck at a local maximum.
+Setting tau^2 = 0. Check the profile likelihood plot with profile(). 
+Warning message:
+Fisher scoring algorithm may have gotten stuck at a local maximum.
+Setting tau^2 = 0. Check the profile likelihood plot with profile(). 
+Warning message:
+Fisher scoring algorithm may have gotten stuck at a local maximum.
+Setting tau^2 = 0. Check the profile likelihood plot with profile(). 
+Warning message:
+Fisher scoring algorithm may have gotten stuck at a local maximum.
+Setting tau^2 = 0. Check the profile likelihood plot with profile(). 
+Warning message:
+Fisher scoring algorithm may have gotten stuck at a local maximum.
+Setting tau^2 = 0. Check the profile likelihood plot with profile(). 
+Warning message:
+Fisher scoring algorithm may have gotten stuck at a local maximum.
+Setting tau^2 = 0. Check the profile likelihood plot with profile(). 
+Warning message:
+Fisher scoring algorithm may have gotten stuck at a local maximum.
+Setting tau^2 = 0. Check the profile likelihood plot with profile(). 
+Warning message:
+Fisher scoring algorithm may have gotten stuck at a local maximum.
+Setting tau^2 = 0. Check the profile likelihood plot with profile(). 
+Warning message:
+Fisher scoring algorithm may have gotten stuck at a local maximum.
+Setting tau^2 = 0. Check the profile likelihood plot with profile(). 
+Warning message:
+Fisher scoring algorithm may have gotten stuck at a local maximum.
+Setting tau^2 = 0. Check the profile likelihood plot with profile(). 
+PASS RQ1 lighting: CI coverage 0.97, not below 0.95 (exact CI) 
+PASS RQ1 lighting: mean estimate 0.438 vs truth 0.45 
+PASS RQ2 lighting: CI coverage 1.00, not below 0.95 (exact CI) 
+PASS RQ2 lighting: mean difference 0.233 vs truth 0.25 
 == Test 3: small dataset, SWiM and RQ4 branches ==
 PASS pipeline runs with 3 studies per feature 
 PASS RQ4 vegetation (2 studies) goes to SWiM, not pooled 
 PASS RQ4 lighting (4 studies) pooled as log relative effect 
+PASS every RQ1 decision carries a robustness label 
+PASS RQ2 Holm family size recorded 
+PASS analysis stops when one pair_id links two effects of the same gender 
+PASS ceiling/floor sensitivity removes the flagged conditions 
+PASS every feature has a status line 
+PASS RQ4 pooled estimate finite with a zero count (0.5 rule) 
+PASS RQ2 POMP intervals plausible (widest 2.9 points) 
 
 RESULT: PASSED

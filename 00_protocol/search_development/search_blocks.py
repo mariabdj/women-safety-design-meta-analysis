@@ -4,7 +4,10 @@
 # maintenance, visibility, disorder, refuge, crime) pulled in unrelated work ("disorder" = mental disorders,
 # "refuge" = shelters). v1 also missed Adamczak 2025, which names no design feature. v2: precise feature phrases,
 # specific harm terms, and S4 (outcome AND women AND place) to catch gender-focused studies without a feature word.
-VERSION = "v2"
+# VERSION 3 (2026-10-31): after the pre-submission review, common phrasings added to PERCEIVED
+# ("safety perception(s)", "feel/feeling/felt unsafe", "perceived personal safety"). The single word "unsafe"
+# was not added: it would pull in unsafe water, sex, abortion, driving.
+VERSION = "v3"
 FEATURE = ['lighting', 'illumination', '"street lights"', '"street lighting"', '"street lamps"', 'vegetation',
            'greenery', '"green space"', '"green spaces"', 'landscaping', 'sightlines', '"sight lines"',
            '"prospect-refuge"', '"prospect and refuge"', 'entrapment', 'concealment', '"active frontage"',
@@ -16,7 +19,9 @@ FEATURE = ['lighting', 'illumination', '"street lights"', '"street lighting"', '
 PERCEIVED = ['"perceived safety"', '"fear of crime"', '"feeling of safety"', '"feelings of safety"',
              '"sense of safety"', '"perception of safety"', '"perceptions of safety"', '"perceived security"',
              '"feeling safe"', '"feel safe"', '"feelings of insecurity"', 'reassurance', '"perceived danger"',
-             '"perceived risk of crime"', '"fear of victimization"', '"fear of victimisation"']
+             '"perceived risk of crime"', '"fear of victimization"', '"fear of victimisation"',
+             '"safety perception"', '"safety perceptions"', '"feel unsafe"', '"feeling unsafe"', '"felt unsafe"',
+             '"perceived personal safety"']
 ACTUAL = ['"sexual harassment"', '"street harassment"', '"sexual assault"', '"sexual violence"',
           '"violence against women"', '"gender-based violence"', '"crime against women"', '"crimes against women"',
           'victimization', 'victimisation', 'rape']

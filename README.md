@@ -4,15 +4,30 @@ Which features of public space (lighting, vegetation, sightlines, active ground 
 
 This repository holds the code, logs and data tables for a systematic review and meta-analysis on that question. The review follows PRISMA 2020 and will be run as a Registered Report. Everything needed to repeat each step is here or linked from here.
 
-**Status (October 2026):** scoping finished, protocol in preparation.
+**Status (1 November 2026):** Stage 1 protocol deposited on OSF (https://osf.io/sy9at/), to be submitted to PCI Registered Reports.
+
+## For reviewers
+
+The Stage 1 manuscript deposited on OSF (https://osf.io/sy9at/) is the version of record. To check it, these files are enough:
+
+| What | File |
+|---|---|
+| Protocol (version of record, including all statements) | Deposited PDF in the OSF project: https://osf.io/sy9at/ |
+| Search strings, counts and benchmark recall | `00_protocol/appendix_B_search_strings.md`, `00_protocol/search_development/benchmark_recall.csv`, `00_protocol/search_development/benchmark_recall_other_dbs.csv` |
+| Screening manual, extraction variables, frozen prompts | `00_protocol/appendix_C_screening_extraction.md` |
+| Sampling plan (sensitivity analysis) | `00_protocol/sensitivity/sensitivity_analysis.R`, `00_protocol/sensitivity/k_needed.csv` |
+| Analysis code and its test on simulated data | `05_analysis/analysis.R`, `05_analysis/effect_sizes.R`, `05_analysis/simulate_data.R`, `05_analysis/test_pipeline.R`, `05_analysis/simulated/test_pipeline_output.txt`, `verification/verify_effect_sizes.R`, `verification/verify_model.R`, `verification/verify_coverage.R`, `05_analysis/simulated/coverage_runs.csv`, `05_analysis/simulated/or_ci_check/` |
+| Citation checks | `00_protocol/citation_check.md`, `verification/verify_references.py` |
+
+Everything else (earlier search versions, scoping files, verification scripts for later steps) is background and does not need to be read.
 
 ## Why this review
-Earlier work either pooled the effect of physical environment changes on fear of crime for everyone (Knabe et al., 2026, preliminary), or reviewed women's safety narratively without pooling (Te Braak & van Tienoven, 2025). As far as I could find, no study has pooled design effects separately for women and compared them with men's within the same studies. The scoping search behind that statement is in `00_protocol/overlap_search/`.
+Earlier work either pooled the effect of physical environment changes on fear of crime for everyone (Knabe et al., 2026, preliminary), or reviewed women's safety narratively without pooling (te Braak & van Tienoven, 2025). As far as I could find, no study has pooled design effects separately for women and compared them with men's within the same studies. The scoping search behind that statement is in `00_protocol/overlap_search/`.
 
 ## Repository layout
 ```
 00_protocol/          protocol, deviations, and the scoping search (overlap_search/)
-01_search/            search logs (raw exports are archived on OSF)
+01_search/            search logs (raw exports will be archived on OSF)
 02_screening/         screening decisions and PRISMA counts
 03_extraction/        extraction sheet
 04_risk_of_bias/      study quality ratings
@@ -24,7 +39,7 @@ VERIFICATION_LOG.md   output of every check, in order
 
 ## Reproducing the work
 - Python 3.12 (standard library only for the search scripts)
-- R 4.6 with `metafor`, `meta`, `esc`, `clubSandwich`, `robvis`, `jsonlite`
+- R 4.6 with `metafor`, `meta`, `esc`, `clubSandwich`, `robvis`, `jsonlite`, `PRISMA2020`, `synthesisr`, `citationchaser`
 
 Scoping search (needs a free OpenAlex key in the `OPENALEX_API_KEY` environment variable):
 ```bash

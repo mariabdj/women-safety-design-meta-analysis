@@ -49,3 +49,6 @@ Each decision is fixed **before** any data are analysed. Once the protocol is re
 
 ## Update to D7, 2026-10-27
 Maria's decision: **no date limit** (all years; still English and French). Reason: in OpenAlex the 1990 limit removed only 233 of 12,810 records (1.8%), so it saved almost no work while needing a justification reviewers often question.
+
+## Pre-submission review, 2026-10-31
+Three strict reviews (supervisor, PCI RR recommender, experienced colleague) led to these protocol changes before deposit: favourable state defined for each feature; rules for choosing effects within a study; correlated-and-hierarchical-effects model as the main model with df from the number of studies; RQ2 as within-study differences; RQ3 made exploratory; decision order with "present but smaller than the SESOI"; sensitivity analysis at both Holm bounds with equivalence-test power; SESOI justified by resources (Lakens 2022) and a stated judgement; AI second screener validated before use and every model inclusion checked in full text; search version 3; bias-control statement made exact (D9 wording "some key results observed" replaced: I saw stated conclusions, not the key variables, and every decision is repeated without those studies). Knabe et al. 2026 is preliminary presentation material, not a preprint.

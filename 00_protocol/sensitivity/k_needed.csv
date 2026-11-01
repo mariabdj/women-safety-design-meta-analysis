@@ -1,17 +1,33 @@
-"i2","design","question","v","k_for_80","k_for_90"
-0,"within-subject, n = 60 women, r = .5","RQ1",0.0166666666666667,6,7
-0.25,"within-subject, n = 60 women, r = .5","RQ1",0.0166666666666667,7,9
-0.5,"within-subject, n = 60 women, r = .5","RQ1",0.0166666666666667,9,11
-0.75,"within-subject, n = 60 women, r = .5","RQ1",0.0166666666666667,16,20
-0,"between-subject, 40 women per condition","RQ1",0.05,12,16
-0.25,"between-subject, 40 women per condition","RQ1",0.05,16,20
-0.5,"between-subject, 40 women per condition","RQ1",0.05,22,29
-0.75,"between-subject, 40 women per condition","RQ1",0.05,42,55
-0,"within-subject, n = 60 women, r = .5","RQ2",0.0333333333333333,9,11
-0.25,"within-subject, n = 60 women, r = .5","RQ2",0.0333333333333333,11,14
-0.5,"within-subject, n = 60 women, r = .5","RQ2",0.0333333333333333,16,20
-0.75,"within-subject, n = 60 women, r = .5","RQ2",0.0333333333333333,29,37
-0,"between-subject, 40 women per condition","RQ2",0.1,22,29
-0.25,"between-subject, 40 women per condition","RQ2",0.1,29,37
-0.5,"between-subject, 40 women per condition","RQ2",0.1,42,55
-0.75,"between-subject, 40 women per condition","RQ2",0.1,81,108
+"i2","design","question","alpha_name","alpha","v","k_for_80","k_for_90"
+0,"within-subject, n = 60 women, r = .5","RQ1","holm_largest",0.05,0.0166666666666667,6,7
+0.25,"within-subject, n = 60 women, r = .5","RQ1","holm_largest",0.05,0.0166666666666667,7,9
+0.5,"within-subject, n = 60 women, r = .5","RQ1","holm_largest",0.05,0.0166666666666667,9,11
+0.75,"within-subject, n = 60 women, r = .5","RQ1","holm_largest",0.05,0.0166666666666667,16,20
+0,"between-subject, 40 women per condition","RQ1","holm_largest",0.05,0.05,12,16
+0.25,"between-subject, 40 women per condition","RQ1","holm_largest",0.05,0.05,16,20
+0.5,"between-subject, 40 women per condition","RQ1","holm_largest",0.05,0.05,22,29
+0.75,"between-subject, 40 women per condition","RQ1","holm_largest",0.05,0.05,42,55
+0,"within-subject, n = 60 women, r = .5","RQ2","holm_largest",0.05,0.0333333333333333,9,11
+0.25,"within-subject, n = 60 women, r = .5","RQ2","holm_largest",0.05,0.0333333333333333,11,14
+0.5,"within-subject, n = 60 women, r = .5","RQ2","holm_largest",0.05,0.0333333333333333,16,20
+0.75,"within-subject, n = 60 women, r = .5","RQ2","holm_largest",0.05,0.0333333333333333,29,37
+0,"between-subject, 40 women per condition","RQ2","holm_largest",0.05,0.1,22,29
+0.25,"between-subject, 40 women per condition","RQ2","holm_largest",0.05,0.1,29,37
+0.5,"between-subject, 40 women per condition","RQ2","holm_largest",0.05,0.1,42,55
+0.75,"between-subject, 40 women per condition","RQ2","holm_largest",0.05,0.1,81,108
+0,"within-subject, n = 60 women, r = .5","RQ1","holm_smallest",0.00833333333333333,0.0166666666666667,9,11
+0.25,"within-subject, n = 60 women, r = .5","RQ1","holm_smallest",0.00833333333333333,0.0166666666666667,11,13
+0.5,"within-subject, n = 60 women, r = .5","RQ1","holm_smallest",0.00833333333333333,0.0166666666666667,14,17
+0.75,"within-subject, n = 60 women, r = .5","RQ1","holm_smallest",0.00833333333333333,0.0166666666666667,24,30
+0,"between-subject, 40 women per condition","RQ1","holm_smallest",0.00833333333333333,0.05,19,23
+0.25,"between-subject, 40 women per condition","RQ1","holm_smallest",0.00833333333333333,0.05,24,30
+0.5,"between-subject, 40 women per condition","RQ1","holm_smallest",0.00833333333333333,0.05,34,42
+0.75,"between-subject, 40 women per condition","RQ1","holm_smallest",0.00833333333333333,0.05,65,81
+0,"within-subject, n = 60 women, r = .5","RQ2","holm_smallest",0.00833333333333333,0.0333333333333333,14,17
+0.25,"within-subject, n = 60 women, r = .5","RQ2","holm_smallest",0.00833333333333333,0.0333333333333333,18,21
+0.5,"within-subject, n = 60 women, r = .5","RQ2","holm_smallest",0.00833333333333333,0.0333333333333333,24,30
+0.75,"within-subject, n = 60 women, r = .5","RQ2","holm_smallest",0.00833333333333333,0.0333333333333333,44,55
+0,"between-subject, 40 women per condition","RQ2","holm_smallest",0.00833333333333333,0.1,34,42
+0.25,"between-subject, 40 women per condition","RQ2","holm_smallest",0.00833333333333333,0.1,44,55
+0.5,"between-subject, 40 women per condition","RQ2","holm_smallest",0.00833333333333333,0.1,65,81
+0.75,"between-subject, 40 women per condition","RQ2","holm_smallest",0.00833333333333333,0.1,125,158

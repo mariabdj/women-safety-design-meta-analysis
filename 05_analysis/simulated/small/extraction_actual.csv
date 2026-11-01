@@ -1,7 +1,7 @@
-"act_id","study_id","feature","metric","ctrl_before","ctrl_after","trt_before","trt_after","source_location"
-"A001","C001","lighting","counts",80,81,80,72,"simulated"
-"A002","C002","lighting","counts",71,65,76,50,"simulated"
-"A003","C003","lighting","counts",100,109,86,92,"simulated"
-"A004","C004","lighting","counts",101,96,91,81,"simulated"
-"A005","C005","vegetation","counts",41,54,31,27,"simulated"
-"A006","C006","vegetation","counts",91,80,90,78,"simulated"
+"act_id","study_id","contrast","feature","metric","outcome_measure","outcome_source","ctrl_before","ctrl_after","trt_before","trt_after","source_location","notes"
+"A001","C001","relit streets vs comparison streets, year before vs year after","lighting","counts","harassment","police records",111,114,115,0,"simulated",
+"A002","C002","relit streets vs comparison streets, year before vs year after","lighting","counts","harassment","police records",135,102,103,75,"simulated",
+"A003","C003","relit streets vs comparison streets, year before vs year after","lighting","counts","harassment","police records",74,80,63,73,"simulated",
+"A004","C004","relit streets vs comparison streets, year before vs year after","lighting","counts","harassment","police records",82,101,84,75,"simulated",
+"A005","C005","replanted streets vs comparison streets, year before vs year after","vegetation","counts","harassment","police records",60,74,80,63,"simulated",
+"A006","C006","replanted streets vs comparison streets, year before vs year after","vegetation","counts","harassment","police records",48,31,57,38,"simulated",
