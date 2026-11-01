@@ -12,7 +12,7 @@ The Stage 1 manuscript deposited on OSF (https://osf.io/sy9at/) is the version o
 
 | What | File |
 |---|---|
-| Protocol (version of record, including all statements) | Deposited PDF in the OSF project: https://osf.io/sy9at/ |
+| Protocol (version of record, including all statements) | Deposited PDF on OSF: https://osf.io/ajq93/ (DOI: https://doi.org/10.17605/OSF.IO/AJQ93) |
 | Search strings, counts and benchmark recall | `00_protocol/appendix_B_search_strings.md`, `00_protocol/search_development/benchmark_recall.csv`, `00_protocol/search_development/benchmark_recall_other_dbs.csv` |
 | Screening manual, extraction variables, frozen prompts | `00_protocol/appendix_C_screening_extraction.md` |
 | Sampling plan (sensitivity analysis) | `00_protocol/sensitivity/sensitivity_analysis.R`, `00_protocol/sensitivity/k_needed.csv` |
