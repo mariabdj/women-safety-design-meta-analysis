@@ -2,17 +2,17 @@
 
 Which features of public space (lighting, vegetation, sightlines, active ground floors, maintenance, the presence of other people) make women feel safer, and do any of them narrow the gap between women's and men's perceived safety?
 
-This repository holds the code, logs and data tables for a systematic review and meta-analysis on that question. The review follows PRISMA 2020 and will be run as a Registered Report. Everything needed to repeat each step is here or linked from here.
+This repository holds the code, logs and data tables for a systematic review and meta-analysis on that question. The review follows PRISMA 2020 and is preregistered on OSF. Everything needed to repeat each step is here or linked from here.
 
-**Status (1 November 2026):** Stage 1 protocol deposited on OSF (https://osf.io/sy9at/), to be submitted to PCI Registered Reports.
+**Status (November 2026):** protocol version 2 being registered on OSF Registries (link added here once public). Version 1 was deposited on OSF on 1 November 2026 as a Stage 1 Registered Report; PCI Registered Reports declined to review it because screening and extraction are not done by two people. Version 2 keeps every analysis rule and describes the single human reviewer and the AI safety net openly; all changes are listed in protocol section 2.14.
 
 ## For reviewers
 
-The Stage 1 manuscript deposited on OSF (https://osf.io/sy9at/) is the version of record. To check it, these files are enough:
+The registered protocol (version 2, PDF in the OSF component below and in the registration) is the version of record. To check it, these files are enough:
 
 | What | File |
 |---|---|
-| Protocol (version of record, including all statements) | Deposited PDF on OSF: https://osf.io/ajq93/ (DOI: https://doi.org/10.17605/OSF.IO/AJQ93) |
+| Protocol (version of record, including all statements) | Version 2 PDF on OSF: https://osf.io/ajq93/ (component DOI: https://doi.org/10.17605/OSF.IO/AJQ93), frozen in the OSF registration; version 1: https://osf.io/v85qc |
 | Search strings, counts and benchmark recall | `00_protocol/appendix_B_search_strings.md`, `00_protocol/search_development/benchmark_recall.csv`, `00_protocol/search_development/benchmark_recall_other_dbs.csv` |
 | Screening manual, extraction variables, frozen prompts | `00_protocol/appendix_C_screening_extraction.md` |
 | Sampling plan (sensitivity analysis) | `00_protocol/sensitivity/sensitivity_analysis.R`, `00_protocol/sensitivity/k_needed.csv` |

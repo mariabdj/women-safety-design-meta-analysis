@@ -28,12 +28,12 @@ Source checklist: NIRO-SR v1.1 Part A (Topor et al., 2023; tool at https://osf.i
 | A22 | yes | Synthesis method, grouping, thresholds | 2.8 |
 | A23 | yes | Methodological heterogeneity | 2.8 (correlated-and-hierarchical-effects model, variance at each level, prediction intervals), 2.10 (moderators) |
 | A24 | yes | Weighting by quality | 2.6 (rule), 2.10 (sensitivity without high risk) |
-| A25 | yes | Who synthesises; reliability with one reviewer | 2.3 and 2.4 (second screening and extraction), 2.7 (second implementation of every computation) |
+| A25 | yes | Who synthesises; reliability with one reviewer | 2.3 (single human reviewer, AI safety net with validation, re-screening), 2.4 (AI extraction check), 2.7 (second implementation of every computation) |
 | A26 | yes | Stage of the review at registration | 2.13 (scoping and search development only; no final search, no screening) |
-| A27 | yes | Changes since first registration | 2.14 (none yet; deviations log) |
+| A27 | yes | Changes since first registration | 2.14 (changes from version 1 to version 2 listed; later changes in the public deviations log) |
 | A28 | yes | Authorship of included records | 2.13 (none) |
 | A29 | no | Attached documents | Appendices A to G |
-| A30 | yes | Registration on a stable platform | PCI RR registers the accepted Stage 1 on OSF; deposit on OSF before submission |
+| A30 | yes | Registration on a stable platform | Version 1 deposited on OSF (1 November 2026); version 2 registered on OSF Registries (Generalized Systematic Review Registration) |
 
 ## PRISMA-P 2015 (Moher et al., 2015)
 

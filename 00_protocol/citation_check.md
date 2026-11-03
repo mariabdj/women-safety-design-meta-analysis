@@ -1,6 +1,6 @@
-# Citation check (Stage 1 manuscript, updated 1 November 2026)
+# Citation check (protocol, updated for version 2, November 2026)
 
-Every sentence of `protocol.md` (and of the deposited `deposit/Boudjelal_Stage1_protocol.qmd`) that attributes a finding or an idea to a source, checked against that source. "Full text" = read in the article itself; "abstract" = only the abstract was available (paywalled).
+Every sentence of `protocol.md` (and of the deposited version 2, `deposit/Boudjelal_protocol_v2.qmd`) that attributes a finding or an idea to a source, checked against that source. "Full text" = read in the article itself; "abstract" = only the abstract was available (paywalled).
 
 | # | Claim in the protocol | Source | Checked against | Result |
 |---|---|---|---|---|
@@ -38,6 +38,12 @@ Every sentence of `protocol.md` (and of the deposited `deposit/Boudjelal_Stage1_
 | 30 | Conversions from t and F (between and within subjects) | Lakens 2013 | full text (open access, PMC3840331) | Supported for t (d_s from t and group sizes; for within-subject designs d_rm, equation 9, which with d_z = t/√n gives t × √(2(1 − r)/n)) and F; the paper does not cover p-values, so the protocol converts p to t with the df itself |
 | 31 | Correlated-and-hierarchical-effects working model with robust variance | Pustejovsky & Tipton 2022 | abstract (Semantic Scholar) | Supported ("an expanded range of working models ... better capturing the types of data structures that occur in practice") |
 | 32 | Small-study tests with dependent effect sizes | Rodgers & Pustejovsky 2021 | abstract (Semantic Scholar) | Supported (evaluates tests for small-study effects or selective reporting when "studies often contribute multiple, statistically dependent effect size estimates") |
+| 33 | Single-reviewer abstract screening missed 13% of relevant studies, against 3% for dual-reviewer screening, in a randomised trial | Gartlehner et al. 2020 | abstract (PubMed 31972274) | Supported ("single-reviewer abstract screening missed 13% of relevant studies (sensitivity: 86.6%...)"; dual "missed 3%"; crowd-based, parallel-group randomized controlled trial) |
+| 34 | A methodological review concluded that single screening is not equivalent to double screening | Waffenschmidt et al. 2019 | abstract (PubMed 31253092) | Supported ("Single screening of the titles and abstracts ... is not equivalent to double screening, as substantially more studies are missed") |
+| 35 | Cochrane, Campbell, JBI and CEE: AI may be used with human oversight when it does not compromise rigour; any AI use that makes or suggests judgements is fully reported | Flemyng et al. 2025 | statement text (the same statement published in Campbell Systematic Reviews and Environmental Evidence; PubMed 41230118 and 41174758, abstracts give the six points) | Supported (points 3, 4 and 5 of the statement) |
+| 36 | Data extraction by one person produces more errors than double extraction | Buscemi et al. 2006 | abstract (PubMed 16765272) | Supported ("Single data extraction resulted in more errors than double data extraction (relative difference: 21.7%, P = .019)") |
+| 37 | Performance of LLMs as screeners varies between reviews and prompts; high sensitivity not guaranteed | Guo et al. 2024 | abstract (PubMed 38214966) | Supported (sensitivity of included papers 0.76 over 6 reviews; "acting as an aid rather than a replacement") |
+| 38 | Same claim as row 37 | Khraisha et al. 2024 | abstract (PubMed 38484744) | Supported (screening performance after adjustment "ranged from none ... to moderate"; "substantial caution should be exercised"; more robust with highly reliable prompts at full text) |
 
 **Page range checked on the primary page:** Ferraro (1996): Crossref (for both DOIs, 10.1093/sf/75.2.667 and 10.2307/2580418) and OpenAlex give only the first page; the JSTOR stable page (https://www.jstor.org/stable/2580418, read on 31 October 2026) gives "Vol. 75, No. 2 (Dec., 1996), pp. 667-690 (24 pages)". The reference now gives 667-690.
 
