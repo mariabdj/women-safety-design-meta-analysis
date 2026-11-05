@@ -1,10 +1,10 @@
 # Urban design features and women's perceived and actual safety in public space: protocol for a gender-disaggregated systematic review and meta-analysis
 
-**Preregistered protocol (OSF Registries)**
+**Preregistered protocol (OSF)**
 
 **Author:** Maria Boudjelal, independent researcher, Algiers, Algeria. ORCID [0009-0002-6434-784X](https://orcid.org/0009-0002-6434-784X)
 
-**Version:** 2, registered on OSF Registries. It supersedes version 1, deposited on OSF on 1 November 2026 as a Stage 1 Registered Report (file https://osf.io/v85qc in the OSF component https://doi.org/10.17605/OSF.IO/AJQ93); the changes are listed in section 2.14.
+**Version:** 2, deposited on OSF in the same component as version 1 (https://doi.org/10.17605/OSF.IO/AJQ93), where the file history keeps both versions with their dates. It supersedes version 1, deposited on OSF on 1 November 2026 as a Stage 1 Registered Report (file https://osf.io/v85qc in the OSF component https://doi.org/10.17605/OSF.IO/AJQ93); the changes are listed in section 2.14.
 
 **Prior access to the evidence:** some titles, abstracts and two full texts read; no effect size extracted or computed (section 2.13)
 
@@ -239,7 +239,7 @@ Any change after registration will be dated and justified in a public deviations
 | Date | Milestone |
 |---|---|
 | 1 November 2026 | Version 1 deposited on OSF |
-| November 2026 | Version 2 registered on OSF Registries |
+| November 2026 | Version 2 deposited on OSF |
 | After registration | Searches and screening (about 6 weeks), then extraction, risk of bias and author contact (about 6 weeks), then analysis and final report (about 4 weeks) |
 
 Target: final report posted as a preprint and submitted to a journal in 2027. If screening takes longer than planned, I extend the timeline rather than change any rule; delays are reported.

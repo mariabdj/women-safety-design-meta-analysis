@@ -33,7 +33,7 @@ Source checklist: NIRO-SR v1.1 Part A (Topor et al., 2023; tool at https://osf.i
 | A27 | yes | Changes since first registration | 2.14 (changes from version 1 to version 2 listed; later changes in the public deviations log) |
 | A28 | yes | Authorship of included records | 2.13 (none) |
 | A29 | no | Attached documents | Appendices A to G |
-| A30 | yes | Registration on a stable platform | Version 1 deposited on OSF (1 November 2026); version 2 registered on OSF Registries (Generalized Systematic Review Registration) |
+| A30 | yes | Registration on a stable platform | Version 1 deposited on OSF (1 November 2026); version 2 deposited in the same OSF component (DOI 10.17605/OSF.IO/AJQ93) |
 
 ## PRISMA-P 2015 (Moher et al., 2015)
 

@@ -4,7 +4,7 @@ Which features of public space (lighting, vegetation, sightlines, active ground 
 
 This repository holds the code, logs and data tables for a systematic review and meta-analysis on that question. The review follows PRISMA 2020 and is preregistered on OSF. Everything needed to repeat each step is here or linked from here.
 
-**Status (November 2026):** protocol version 2 being registered on OSF Registries (link added here once public). Version 1 was deposited on OSF on 1 November 2026 as a Stage 1 Registered Report; PCI Registered Reports declined to review it because screening and extraction are not done by two people. Version 2 keeps every analysis rule and describes the single human reviewer and the AI safety net openly; all changes are listed in protocol section 2.14.
+**Status (November 2026):** protocol version 2 deposited on OSF (https://doi.org/10.17605/OSF.IO/AJQ93), next to version 1. Version 1 was deposited on OSF on 1 November 2026 as a Stage 1 Registered Report; PCI Registered Reports declined to review it because screening and extraction are not done by two people. Version 2 keeps every analysis rule and describes the single human reviewer and the AI safety net openly; all changes are listed in protocol section 2.14.
 
 ## For reviewers
 
