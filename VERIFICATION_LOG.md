@@ -158,3 +158,25 @@ RESULT: NOT YET PASSED (Maria's approval and OSF deposit pending; Appendix F and
 - 2026-11-03: Expert panel on version 2 (rule A6; roles adapted to the new route: strict evidence-synthesis supervisor, methodologist for AI in evidence synthesis, handling editor of a receiving journal). Round 1: 0 blocker from the editor and the AI methodologist, 1 from the supervisor (stale PDF), 12 major (editor 3, supervisor 4, AI methodologist 5), 26 minor (7, 12, 7); rounds 2 to 6: no blocker, 2 major in round 2 (stripped mode not fully stripped: --safe-mode added; full-text and image pipeline), then minors only (wording, data locations, Rule 1: model outputs off GitHub). Round 7: all three reviewers "No further problems". Every finding was applied; none was rejected.
 - [ ] [MARIA] approves the commit and push of version 2 to GitHub, switches off the model-training setting of the AI account, uploads Boudjelal_protocol_v2.pdf to https://osf.io/ajq93/, fills the OSF form from `OSF_registration_form_answers.md` and submits the registration (public immediately). Registration DOI to be logged here.
 - 2026-11-05: Route change (author): PCI RR given up. Version 2 of the protocol deposited in the same OSF component as version 1 (https://osf.io/ajq93/, DOI 10.17605/OSF.IO/AJQ93) instead of a separate OSF Registries form. Text changed only where it said "registered on OSF Registries" (header, version line, timeline, Appendix A A30, README). Uploaded file Boudjelal_protocol_v2.pdf: SHA-256 a8ab557f11dad95f44f41624889c46c0895d410cb6241c3b0dcee089991120f3 on OSF, equal to the local file. Component title and description updated to name version 2 as current.
+
+## GATE 1: Protocol | run 2 | 2026-11-05 18:51
+### verify_sensitivity.py: PASS
+```
+224 rows x 5 values checked, 0 mismatches
+RESULT: PASSED
+```
+### verify_references.py: PASS
+```
+RESULT: PASSED (58 DOIs verified on Crossref, citations and bibliography match)
+```
+Manual checks: (fill in: each manual item of the gate, with evidence)
+AUTOMATIC CHECKS: ALL PASSED
+RESULT: (write PASSED only when automatic AND manual checks all pass)
+Manual checks (Gate 1, run 2):
+- [x] Expert panel (rule A6, Part G): on version 2, three reviewers (evidence-synthesis supervisor, methodologist for AI in evidence synthesis, handling editor of a receiving journal), rounds 1 to 7; round 7: all three "No further problems"; every finding applied (entry of 2026-11-03 above). The only change since then (2026-11-05) is the wording of where version 2 is deposited ("deposited on OSF" instead of "registered on OSF Registries"); no method, rule or number changed.
+- [x] Every PRISMA-P and NIRO-SR Part A item answered: `00_protocol/appendix_A_checklists.md` (A30 updated to the OSF deposit of version 2).
+- [x] Search strings run without syntax error and hit counts logged: `00_protocol/search_development/search_dev_log.csv`, Appendix B (OpenAlex union 13,641; Semantic Scholar 8,624; PubMed 1,126; entries of 2026-10-27 and 2026-10-31 above).
+- [x] Each sub-question maps to one pre-specified analysis: protocol section 3 (design table H0, RQ1 to RQ4) and section 2.8.
+- [x] [MARIA] read and approved protocol version 2 ("Oui, j'approuve", 5 November 2026). Deposited on OSF: https://osf.io/ajq93/ (DOI 10.17605/OSF.IO/AJQ93); version 1 on 1 November 2026, version 2 on 5 November 2026 (SHA-256 a8ab557f... equal to the local file). The earlier [MARIA] item about the OSF Registries form is replaced by this deposit (route change of 2026-11-05).
+AUTOMATIC CHECKS: ALL PASSED
+RESULT: PASSED
